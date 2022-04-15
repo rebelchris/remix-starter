@@ -10,8 +10,13 @@ export async function getPosts(): Promise<Array<Post>> {
       title: "My First Post",
     },
     {
-      slug: "90s-mixtape",
-      title: "A Mixtape I Made Just For You",
+      slug: "post-2",
+      title: "My second post",
     },
   ];
+}
+
+export async function getPost(slug: string | undefined): Promise<Post> {
+  const posts = await getPosts();
+  return posts.filter(post => post.slug === slug)[0]
 }
