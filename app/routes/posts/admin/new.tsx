@@ -12,7 +12,7 @@ export const action = async ({ request }) => {
   const content = formData.get("content");
 
   await createPost({ title, slug, content });
-  return redirect("/posts");
+  return redirect("/posts/admin");
 };
 
 export default function NewPost() {
