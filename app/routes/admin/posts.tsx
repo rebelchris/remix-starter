@@ -15,10 +15,6 @@ export default function PostAdmin() {
   const { posts } = useLoaderData() as LoaderData;
 
   return (
-    <div className="mx-auto max-w-4xl">
-      <h1 className="my-6 mb-2 border-b-2 text-center text-3xl">
-        My super cool admin
-      </h1>
       <div className="grid grid-cols-4 gap-6">
         <nav className="col-span-4 md:col-span-1">
           <ul>
@@ -38,6 +34,5 @@ export default function PostAdmin() {
           <Outlet />
         </main>
       </div>
-    </div>
   );
 }
