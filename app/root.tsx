@@ -26,6 +26,23 @@ export const meta: MetaFunction = () => ({
   viewport: "width=device-width,initial-scale=1",
 });
 
+export function ErrorBoundary({ error }) {
+  return (
+    <html>
+    <head>
+      <title>Oh no!</title>
+      <Meta />
+      <Links />
+    </head>
+    <body className='m-4'>
+    <h1 className='text-2xl'>Something went wrong!</h1>
+    <p>{error.message}</p>
+    <Scripts />
+    </body>
+    </html>
+  );
+}
+
 type LoaderData = {
   user: Awaited<ReturnType<typeof getUser>>;
 };
