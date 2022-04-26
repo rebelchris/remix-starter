@@ -20,11 +20,21 @@ export const links: LinksFunction = () => {
   return [{ rel: "stylesheet", href: tailwindStylesheetUrl }];
 };
 
-export const meta: MetaFunction = () => ({
-  charset: "utf-8",
-  title: "Remix Notes",
-  viewport: "width=device-width,initial-scale=1",
-});
+export const meta: MetaFunction = () => {
+  return {
+    charset: "utf-8",
+    viewport: "width=device-width,initial-scale=1",
+    description: "Welcome to our Remix app",
+    keywords: "Remix,app",
+    "twitter:image": "https://remix.app/social.png",
+    "twitter:card": "summary_large_image",
+    "twitter:creator": "@DailyDevTips1",
+    "twitter:site": "@DailyDevTips1",
+    "twitter:title": "Remix app",
+    "twitter:description": "Chris created this Remix app, check it out",
+    "custom": "Something custom you like"
+  };
+};
 
 export function ErrorBoundary({ error }) {
   return (

@@ -1,4 +1,4 @@
-import { json } from "@remix-run/node";
+import { json, MetaFunction } from "@remix-run/node";
 import { Link, useLoaderData } from "@remix-run/react";
 import { getPokemons } from "~/models/pokemon.server";
 
@@ -11,6 +11,12 @@ export const loader = async () => {
     data: await getPokemons(),
   });
 };
+
+export const meta: MetaFunction = () => ({
+  title: "The complete Pokémon list",
+  description:
+    "This is the list with all existing Pokémon"
+});
 
 export default function Posts() {
   const { data } = useLoaderData() as LoaderData;
